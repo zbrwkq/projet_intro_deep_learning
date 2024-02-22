@@ -1,4 +1,4 @@
-# projet_intro_deep_learning
+# Projet introduction au machine learning et deep learning
 
 Ce projet utilise un algorithme d'intelligence artificielle afin de sortir les 3 races de chiens dont la correspondance à une image sont les plus probables.
 
