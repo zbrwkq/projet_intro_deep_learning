@@ -11,7 +11,7 @@ Ce projet utilise un algorithme d'intelligence artificielle afin de sortir les 3
 # Démarrage et Utilisation l'application
 
 ## Déploiement du serveur
-Ouvrir un terminal à la racine du projet puis exécuter la commande suivante afin de démarrer le serveur : py app.py
+Ouvrir un terminal à la racine du projet puis exécuter la commande suivante afin de démarrer le serveur : streamlit run app.py
 
 ## Accéder à l'application
 Ouvrir un navigateur et accéder à l'URL suivante : http://localhost:8501
