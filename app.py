@@ -10,6 +10,7 @@ model = tf.keras.models.load_model('model/')
 def predict_dog_breed(image):
     # Prétraiter l'image
     image = image.resize((150, 150))
+    image = image.convert('RGB')
     image = np.asarray(image) / 255.0
     image = np.expand_dims(image, axis=0)
 
