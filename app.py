@@ -23,7 +23,7 @@ def predict_dog_breed(image):
 
     confidence = predictions[0][predicted_class]
 
-    return predicted_race, confidence
+    return predicted_race.replace('_', ' '), confidence
 
 def main():
     st.title("Identification de la race de chien")
