@@ -4,11 +4,11 @@ import numpy as np
 import tensorflow as tf
 
 # Charger le modèle pré-entraîné
-# model = tf.keras.models.load_model('')
+model = tf.keras.models.load_model('model/')
 
 def predict_dog_breed(image):
     # Prétraiter l'image
-    image = image.resize((224, 224))
+    image = image.resize((150, 150))
     image = np.asarray(image) / 255.0
     image = np.expand_dims(image, axis=0)
 
