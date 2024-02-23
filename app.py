@@ -5,11 +5,12 @@ import tensorflow as tf
 import os
 
 # Charger le modèle pré-entraîné
-model = tf.keras.models.load_model('model/')
+model = tf.keras.models.load_model('model2/')
 
 def predict_dog_breed(image):
     # Prétraiter l'image
     image = image.resize((150, 150))
+    image = image.convert('RGB')
     image = np.asarray(image) / 255.0
     image = np.expand_dims(image, axis=0)
 
@@ -22,7 +23,7 @@ def predict_dog_breed(image):
 
     confidence = predictions[0][predicted_class]
 
-    return predicted_race, confidence
+    return predicted_race.replace('_', ' '), confidence
 
 def main():
     st.title("Identification de la race de chien")
