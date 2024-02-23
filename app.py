@@ -2,6 +2,7 @@ import streamlit as st
 from PIL import Image
 import numpy as np
 import tensorflow as tf
+import os
 
 # Charger le modèle pré-entraîné
 model = tf.keras.models.load_model('model/')
@@ -15,9 +16,13 @@ def predict_dog_breed(image):
     # Faire la prédiction
     predictions = model.predict(image)
     predicted_class = np.argmax(predictions)
+
+    races = os.listdir("./Images")
+    predicted_race = races[predicted_class]
+
     confidence = predictions[0][predicted_class]
 
-    return predicted_class, confidence
+    return predicted_race, confidence
 
 def main():
     st.title("Identification de la race de chien")
@@ -29,8 +34,8 @@ def main():
         st.image(image, caption='Image importée', use_column_width=True)
 
         if st.button('Identifier la race'):
-            predicted_class, confidence = predict_dog_breed(image)
-            st.success(f"Race prédite: {predicted_class}, Confiance: {confidence:.2f}")
+            predicted_race, confidence = predict_dog_breed(image)
+            st.success(f"Race prédite: {predicted_race}, Confiance: {confidence:.2f}")
 
 if __name__ == '__main__':
     main()
