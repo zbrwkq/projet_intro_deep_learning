@@ -5,7 +5,7 @@ import tensorflow as tf
 import os
 
 # Charger le modèle pré-entraîné
-model = tf.keras.models.load_model('model/')
+model = tf.keras.models.load_model('model2/')
 
 def predict_dog_breed(image):
     # Prétraiter l'image
