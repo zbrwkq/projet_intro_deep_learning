@@ -3,3 +3,6 @@ images.tar
 train/*
 test/*
 model/*
+model2/*
+model.h5
+model2.h5
